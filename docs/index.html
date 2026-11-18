@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução da Mobilidade Urbana no Rio de Janeiro (1995-2025)</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.50rem;
+        }
+
+        .author-info {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        .badges {
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: white;
+            margin: 0 0.3rem;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        main {
+            max-width: 900px;
+            margin: -2rem auto 3rem auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.2rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+
+        .figure-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Dinâmica e Movimento Médio Diário de Passageiros nos Modais de Transporte do Rio de Janeiro (1995-2025)</h1>
+        <div class="author-info">
+            <p><strong>Alunos:</strong> Lorrane Goulart & Marcus Filipe Malek | <strong>Curso:</strong> Sistemas de
+                Informação</p>
+            <p><strong>Instituição:</strong> UniLasalle - RJ</p>
+            <p><strong>Professor:</strong> Alexandre Neves Louzada</p>
+        </div>
+        <div class="badges">
+            <a href="https://github.com/mfmalek/projeto-mobilidade-rio-1995-2025" target="_blank" class="badge">📦
+                Repositório GitHub</a>
+            <a href="#dados" class="badge">📊 Acessar Dados FAIR</a>
+            <a href="#referencias" class="badge">📚 Referências</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="resumo">
+            <h2>Resumo / Abstract</h2>
+            <p><strong>Resumo:</strong> O presente estudo analisa a evolução histórica do movimento médio diário de
+                passageiros no Município do Rio de Janeiro entre 1995 e 2025, abrangendo os modais rodoviário,
+                ferroviário, hidroviário e aeroviário. Utilizando técnicas de engenharia de dados em Python e análise
+                exploratória de séries temporais, o trabalho investiga os impactos estruturais de grandes eventos
+                urbanos, investimentos em infraestrutura e o choque severo provocado pela pandemia de COVID-19. Os
+                resultados demonstram a predominância histórica do transporte rodoviário (ônibus), seguido pela expansão
+                expressiva do metrô e das barcas, bem como a recuperação gradual do setor pós-2020. O projeto foi
+                desenvolvido sob os princípios da Ciência Aberta (FAIR), garantindo reprodutibilidade integral por meio
+                de repositório público.</p>
+            <p><strong>Palavras-chave:</strong> Mobilidade Urbana; Transporte Público; Análise de Dados; Séries
+                Temporais; Python.</p>
+        </section>
+
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>A mobilidade urbana é um dos pilares fundamentais para o desenvolvimento socioeconômico e a
+                sustentabilidade das metrópoles modernas. No Município do Rio de Janeiro, a malha de transportes abrange
+                múltiplos modais — ônibus, metrô, trens urbanos, bondes, barcas e aeroportos — que atendem a milhões de
+                deslocamentos diários.</p>
+            <p>Compreender como o fluxo de passageiros flutuou ao longo de três décadas (1995-2025) permite avaliar a
+                eficácia de políticas públicas de integração tarifária, expansão de linhas metroviárias e os impactos de
+                crises sanitárias globais. Para guiar esta investigação, definimos as seguintes <strong>Perguntas de
+                    Pesquisa</strong>:</p>
+            <ul>
+                <li><strong>RQ1:</strong> Qual é a participação relativa (modal split) de cada meio de transporte na
+                    matriz de passageiros do Rio de Janeiro ao longo do período analisado e quais modais apresentaram
+                    maior crescimento percentual?</li>
+                <li><strong>RQ2:</strong> Qual foi o impacto quantitativo exato da pandemia de COVID-19 (anos 2020-2021)
+                    sobre o movimento diário de passageiros em comparação com o pico histórico anterior?</li>
+                <li><strong>RQ3:</strong> Existe correlação estatística significativa entre a expansão dos sistemas de
+                    alta capacidade (metrô e trens) e a variação no volume do transporte rodoviário tradicional por
+                    ônibus?</li>
+            </ul>
+        </section>
+
+        <section id="metodologia">
+            <h2>2. Metodologia e Pipeline de Dados</h2>
+            <p>O pipeline analítico foi concebido seguindo um fluxo determinístico em Python. A fonte primária dos dados
+                é a série estatística oficial disponibilizada pela Prefeitura do Rio de Janeiro (SMI / Pereira Passos /
+                Órgãos Reguladores), abrangendo a Tabela 728.</p>
+
+            <h3>Estratégias de Tratamento de Dados (ETL)</h3>
+            <ul>
+                <li><strong>Ingestão e Parsing:</strong> Leitura do arquivo original em formato tabular (`.xls`),
+                    isolando o intervalo temporal de 1995 a 2025.</li>
+                <li><strong>Tratamento de Inconsistências:</strong> Substituição de caracteres de dados não disponíveis
+                    (`...`) por valores nulos (`NaN`) e tratamento específico para a interrupção temporária dos bondes
+                    de Santa Teresa entre 2012 e 2015.</li>
+                <li><strong>Métricas Derivadas:</strong> Cálculo do somatório diário total de passageiros em circulação
+                    na cidade (`total_passageiros`).</li>
+            </ul>
+
+            <p>Trecho central do script de transformação desenvolvido em Python (`src/etl.py`):</p>
+            <pre><code>import pandas as pd
+import numpy as np
+
+def transformar_dados(df_raw: pd.DataFrame) -> pd.DataFrame:
+    data_rows = []
+    for idx in range(7, 38):
+        row = df_raw.iloc[idx]
+        data_rows.append({
+            'ano': int(row.iloc[0]),
+            'onibus': float(row.iloc[1]) if pd.notna(row.iloc[1]) and row.iloc[1] != '...' else np.nan,
+            'metro': float(row.iloc[2]) if pd.notna(row.iloc[2]) and row.iloc[2] != '...' else np.nan,
+            'trem': float(row.iloc[3]) if pd.notna(row.iloc[3]) and row.iloc[3] != '...' else np.nan,
+            'bonde': float(row.iloc[4]) if pd.notna(row.iloc[4]) and row.iloc[4] != '...' else np.nan,
+            'hidroviario': float(row.iloc[5]) if pd.notna(row.iloc[5]) and row.iloc[5] != '...' else np.nan,
+            'aeroviario': float(row.iloc[6]) if pd.notna(row.iloc[6]) and row.iloc[6] != '...' else np.nan,
+        })
+    df = pd.DataFrame(data_rows)
+    df['total_passageiros'] = df[['onibus', 'metro', 'trem', 'bonde', 'hidroviario', 'aeroviario']].sum(axis=1)
+    return df</code></pre>
+        </section>
+
+        <section id="resultados">
+            <h2>3. Resultados e Discussão</h2>
+            <p>A análise exploratória revelou dinâmicas marcantes na mobilidade carioca entre 1995 e 2025. O volume
+                total diário de passageiros atingiu seu ápice histórico em <strong>2015</strong>, com aproximadamente
+                <strong>4.82 milhões de passageiros/dia</strong> somando todos os modais, impulsionado pelos
+                investimentos em mobilidade para a Copa do Mundo de 2014 e os preparativos para os Jogos Olímpicos de
+                2016.
+            </p>
+
+            <div class="figure-container">
+                <div style="background: #f8fafc; border: 2px dashed #cbd5e1; padding: 2rem; border-radius: 6px;">
+                    <p style="margin: 0; color: #64748b; font-weight: bold;">[Figura 1: Evolução Temporal do Movimento
+                        Diário de Passageiros por Modal (1995-2025)]</p>
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;">O gráfico ilustra a queda
+                        acentuada do ônibus e o crescimento expressivo do metrô, além do colapso pandêmico em 2020.</p>
+                </div>
+            </div>
+
+            <h3>Respostas às Perguntas de Pesquisa</h3>
+            <ul>
+                <li><strong>Resposta à RQ1:</strong> O modal rodoviário (ônibus) manteve-se como a espinha dorsal do
+                    sistema, embora tenha caído de uma média superior a 3,2 milhões de passageiros/dia na década de 1990
+                    para cerca de 1,8 milhão em 2025. Em contrapartida, o Metrô-RJ apresentou forte expansão, saltando
+                    de ~323 mil passageiros/dia em 1995 para pico de mais de 942 mil em 2016.</li>
+                <li><strong>Resposta à RQ2:</strong> O impacto da COVID-19 em 2020 reduziu o movimento total de
+                    passageiros em mais de 50% em relação a 2019, fazendo o total diário despencar para níveis
+                    inferiores a 2,3 milhões de passageiros combinados, o menor patamar da série histórica recente.</li>
+                <li><strong>Resposta à RQ3:</strong> Identificou-se correlação negativa moderada entre a expansão de
+                    passageiros transportados pelo sistema metroviário e a redução proporcional da dependência exclusiva
+                    do transporte rodoviário em corredores troncais.</li>
+            </ul>
+        </section>
+
+        <section id="conclusao">
+            <h2>4. Conclusão</h2>
+            <p>O estudo evidenciou a profunda transformação estrutural na mobilidade urbana do Rio de Janeiro ao longo
+                de três décadas. A transição de um modelo hiper-concentrado em ônibus para uma matriz mais diversificada
+                com o fortalecimento de trilhos (metrô e trens) demonstra avanços na resiliência sistêmica. Contudo, os
+                desafios pós-pandemia exigem novas políticas de integração tarifária e requalificação do transporte
+                público.</p>
+            <p>Como limitações do estudo, destacam-se a agregação anual dos dados oficiais e a ausência de desagregação
+                espacial por bairros. Para trabalhos futuros, sugere-se a incorporação de dados de bilhetagem eletrônica
+                em tempo real e geoprocessamento espacial das linhas de fluxo.</p>
+        </section>
+
+        <section id="dados">
+            <h2>5. Disponibilidade dos Dados e Declaração FAIR</h2>
+            <p>Em conformidade com os princípios FAIR (Findable, Accessible, Interoperable, Reusable), todo o
+                código-fonte, dados brutos e artefatos gerados encontram-se disponíveis no repositório GitHub do
+                projeto.</p>
+            <pre><code># Comandos para clonagem e reprodução do ambiente:
+git clone https://github.com/mfmalek/projeto-mobilidade-rio-1995-2025.git
+cd projeto-mobilidade-rio-1995-2025
+pip install -r requirements.txt
+python src/etl.py</code></pre>
+            <p><strong>Licenciamento:</strong> Código de software sob licença MIT; Documentação e dados processados sob
+                licença <em>Creative Commons Attribution 4.0 International (CC-BY 4.0)</em>.</p>
+        </section>
+
+        <section id="referencias">
+            <h2>6. Referências</h2>
+            <p>IPLANRIO / PREFEITURA DA CIDADE DO RIO DE JANEIRO. <strong>Séries Estatísticas da Cidade do Rio de
+                    Janeiro - Tabela 728: Movimento médio diário de passageiros, segundo os transportes rodoviário,
+                    ferroviário, hidroviário e aeroviário (1995-2025)</strong>.</p>
+            <p>MCKINNEY, Wes. <strong>Data Structures for Statistical Computing in Python</strong>. Proceedings of the
+                9th Python in Science Conference, p. 56-61, 2010.</p>
+            <p>WILKINSON, M. et al. <strong>The FAIR Guiding Principles for scientific data management and
+                    stewardship</strong>. Scientific Data, v. 3, 160018, 2016.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Final de Linguagem de Programação - Sistemas de Informação.</p>
+    </footer>
+
+</body>
+
+</html>
