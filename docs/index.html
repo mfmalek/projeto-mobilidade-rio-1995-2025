@@ -98,7 +98,6 @@
         }
 
         code {
-            background: #f1f5f9;
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
             font-family: monospace;
@@ -179,7 +178,7 @@
 
     <main>
         <section id="resumo">
-            <h2>Resumo / Abstract</h2>
+            <h2>Resumo</h2>
             <p><strong>Resumo:</strong> O presente estudo analisa a evolução histórica do movimento médio diário de
                 passageiros no Município do Rio de Janeiro entre 1995 e 2025, abrangendo os modais rodoviário,
                 ferroviário, hidroviário e aeroviário. Utilizando técnicas de engenharia de dados em Python e análise
@@ -264,12 +263,10 @@ def transformar_dados(df_raw: pd.DataFrame) -> pd.DataFrame:
             </p>
 
             <div class="figure-container">
-                <div style="background: #f8fafc; border: 2px dashed #cbd5e1; padding: 2rem; border-radius: 6px;">
-                    <p style="margin: 0; color: #64748b; font-weight: bold;">[Figura 1: Evolução Temporal do Movimento
-                        Diário de Passageiros por Modal (1995-2025)]</p>
-                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;">O gráfico ilustra a queda
-                        acentuada do ônibus e o crescimento expressivo do metrô, além do colapso pandêmico em 2020.</p>
-                </div>
+                <img src="assets/grafico_evolucao_modais.png"
+                    alt="Evolução Temporal do Movimento Diário de Passageiros por Modal (1995-2025)">
+                <p class="caption">Figura 1: Evolução do Movimento Diário de Passageiros por Modal no Município do Rio
+                    de Janeiro (1995-2025).</p>
             </div>
 
             <h3>Respostas às Perguntas de Pesquisa</h3>
